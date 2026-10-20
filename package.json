@@ -1,0 +1,21 @@
+{
+  "name": "lookmeal-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "test:notif:ga": "playwright test tests/notifications --project=chromium-general-admin",
+  "test:notif:sa": "playwright test tests/notifications --project=chromium-super-admin --grep @critical"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4"
+  }
+}
