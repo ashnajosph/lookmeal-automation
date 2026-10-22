@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, rowDates, openNotifications } = require('./notificationHelpers');
+const { rowsOf, rowDates, openNotifications } = require('../helpers/notificationHelpers');
 
 test.beforeEach(async ({ page }) => {
   await openNotifications(page);

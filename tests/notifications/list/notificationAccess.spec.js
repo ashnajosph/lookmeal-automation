@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf } = require('./notificationHelpers');
+const { rowsOf } = require('../helpers/notificationHelpers');
 
 test('ADM_022.001 / ADM_027.001 @critical - the 通知 sidebar item opens the notification list', async ({ page }) => {
   await page.goto('/');

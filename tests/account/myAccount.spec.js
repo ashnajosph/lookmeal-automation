@@ -70,7 +70,7 @@ test('ADM_008.007 / ADM_009.007 - invalid name and email together show both erro
   await expect(dialog.getByText('有効なメールアドレスを入力してください')).toBeVisible();
 });
 
-test('ADM_008.004 / ADM_009.006 - a failed save shows an error toast and keeps the popup open', async ({ page }) => {
+test('ADM_008.004 / ADM_008.006 / ADM_009.006 - a failed save shows an error toast and keeps the popup open', async ({ page }) => {
   await forceApiFailure(page, /\/admins\/sub-admins\/update/); // the request never reaches the server
   const { dialog, nameInput, saveButton } = await openMyAccount(page);
 

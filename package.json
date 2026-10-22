@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test:notif:ga": "playwright test tests/notifications --project=chromium-general-admin",
-  "test:notif:sa": "playwright test tests/notifications --project=chromium-super-admin --grep @critical"
-},
+    "test:notif:ga": "playwright test tests/notifications --project=chromium-general-admin",
+    "test:notif:sa": "playwright test tests/notifications --project=chromium-super-admin --grep @critical",
+    "test:real-send:guest": "ALLOW_GUEST_SEND=1 playwright test tests/notifications/real-send/notificationGuestSend.spec.js tests/notifications/db-checks/notificationGuestLogs.spec.js --project=chromium-super-admin",
+    "test:real-send:member": "ALLOW_MEMBER_SEND=1 playwright test tests/notifications/real-send/notificationPushSend.spec.js --project=chromium-super-admin",
+    "test:auth": "playwright test tests/auth --project=chromium",
+    "test:account": "playwright test tests/account --project=chromium-super-admin",
+    "test:winners": "playwright test tests/winners --project=chromium-super-admin",
+    "test:users": "playwright test tests/users --project=chromium-super-admin",
+    "test:tags": "playwright test tests/tags --project=chromium-super-admin",
+    "test:all": "playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

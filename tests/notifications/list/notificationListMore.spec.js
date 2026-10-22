@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, openNotifications } = require('./notificationHelpers');
-const { deliveryCell, titleCell, chooseFilter, expectOnlyMethod } = require('./notificationListHelpers');
+const { rowsOf, openNotifications } = require('../helpers/notificationHelpers');
+const { deliveryCell, titleCell, chooseFilter, expectOnlyMethod } = require('../helpers/notificationListHelpers');
 
 // List pagination, filter switching and the notification detail screen. Nothing here sends anything.
 

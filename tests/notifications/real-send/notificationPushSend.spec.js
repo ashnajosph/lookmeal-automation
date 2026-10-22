@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, searchBox, openCreateForm, openPushForm } = require('./notificationHelpers');
-const { attachImage } = require('./notificationImageHelpers');
+const { rowsOf, searchBox, openCreateForm, openPushForm } = require('../helpers/notificationHelpers');
+const { attachImage } = require('../helpers/notificationImageHelpers');
 
 // WARNING: these tests really press 配信する on QA:
 //  - the push test sends to ALL registered users

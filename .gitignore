@@ -11,3 +11,9 @@ node_modules/
 auth/
 test-results/
 playwright-report/
+
+tools/.venv/
+run-results*.json
+traceability-list.json
+traceability-report.xlsx
+__pycache__/

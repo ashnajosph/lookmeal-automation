@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { openGuestInAppForm, openGuestPushForm } = require('./notificationGuestHelpers');
+const { openGuestInAppForm, openGuestPushForm } = require('../helpers/notificationGuestHelpers');
 
 // These tests open the confirmation dialog and always press キャンセル.
 // Nothing here presses 配信する, so nothing reaches the guest users.

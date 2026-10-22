@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { openGuestInAppForm } = require('./notificationGuestHelpers');
-const { downloadTable } = require('./dbReportHelpers');
+const { openGuestInAppForm } = require('../helpers/notificationGuestHelpers');
+const { downloadTable } = require('../helpers/dbReportHelpers');
 
 // WARNING: this test really sends one in-app notification to ALL guest users.
 // It is skipped unless you switch it on:  ALLOW_GUEST_SEND=1 npx playwright test ...

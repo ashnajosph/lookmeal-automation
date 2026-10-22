@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { openPushForm } = require('./notificationHelpers');
+const { openPushForm } = require('../helpers/notificationHelpers');
 
 // Every case: fill the title and message, then check whether 送信する can be pressed
 const sendButtonCases = [

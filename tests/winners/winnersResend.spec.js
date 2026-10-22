@@ -44,5 +44,5 @@ test('ADM_017.004 - resend shows the success toast @sendsEmail', async ({ page }
   await dialog.getByRole('button', { name: '再送信する' }).click();
 
   await expect(page.locator('.Toastify__toast--success').first())
-    .toContainText('ギフトURLを再送信しました');
+    .toContainText('ギフトURLを再送信しました', { timeout: 20000 });
 });

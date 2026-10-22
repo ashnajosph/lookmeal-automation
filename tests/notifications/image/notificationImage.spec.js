@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { openCreateForm } = require('./notificationHelpers');
-const { attachImage } = require('./notificationImageHelpers');
+const { openCreateForm } = require('../helpers/notificationHelpers');
+const { attachImage } = require('../helpers/notificationImageHelpers');
 
 // Image in the in-app message editor. Nothing here presses 次へ or sends anything.
 

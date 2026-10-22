@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, openNotifications, openCreateForm } = require('./notificationHelpers');
+const { rowsOf, openNotifications, openCreateForm } = require('../helpers/notificationHelpers');
 
 test('ADM_022.018 @critical - 新規作成 opens the notification creation screen', async ({ page }) => {
   await openNotifications(page);

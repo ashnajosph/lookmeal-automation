@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { openGuestInAppForm, openGuestPushForm } = require('./notificationGuestHelpers');
+const { openGuestInAppForm, openGuestPushForm } = require('../helpers/notificationGuestHelpers');
 
 // A service worker could hide requests from page.route, so switch service workers off for this file
 test.use({ serviceWorkers: 'block' });
@@ -27,11 +27,11 @@ async function sendAndExpectError(page, blockedCount) {
 
   await page.getByRole('dialog').getByRole('button', { name: '配信する' }).click();
 
-  await expect(page.locator('.Toastify__toast--error').first()).toBeVisible();
+  await expect(page.locator('.Toastify__toast--error').first()).toContainText('通知の送信に失敗しました。もう一度お試しください。');
   expect(blockedCount()).toBeGreaterThan(before); // the send request was blocked too
 }
 
-test('ADM_030.015 - guest push: a failed send shows an error message', async ({ page }) => {
+test('ADM_030.015 / ADM_027.119 / ADM_027.122 - guest push: a failed send shows an error message', async ({ page }) => {
   const { title, message, sendButton } = await openGuestPushForm(page);
   await title.fill('title');
   await message.fill('message');
@@ -43,7 +43,7 @@ test('ADM_030.015 - guest push: a failed send shows an error message', async ({ 
   await sendAndExpectError(page, blockedCount);
 });
 
-test('ADM_030.016 - guest in-app: a failed send shows an error message', async ({ page }) => {
+test('ADM_030.016 / ADM_027.119 / ADM_027.122 - guest in-app: a failed send shows an error message', async ({ page }) => {
   const { title, preview, body, nextButton } = await openGuestInAppForm(page);
   await title.fill('title');
   await preview.fill('preview');

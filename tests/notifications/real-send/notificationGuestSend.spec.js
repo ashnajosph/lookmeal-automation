@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, searchBox } = require('./notificationHelpers');
-const { openGuestInAppForm, openGuestPushForm } = require('./notificationGuestHelpers');
+const { rowsOf, searchBox } = require('../helpers/notificationHelpers');
+const { openGuestInAppForm, openGuestPushForm } = require('../helpers/notificationGuestHelpers');
 
 // WARNING: these tests really press 配信する, which sends to ALL guest users on the QA environment.
 // They are skipped unless you switch them on:  ALLOW_GUEST_SEND=1 npx playwright test ...

@@ -35,12 +35,15 @@ test('Winners (extra) - searching an email narrows the list to it', async ({ pag
 
 test('Winners (extra) - a search with no match shows the no-data message', async ({ page }) => {
   await page.goto('/winners');
+  // wait for the first list to load, so it cannot overwrite the search
+  await expect(page.locator('tbody tr[role="checkbox"]').first()).toBeVisible();
 
   await page.getByPlaceholder('ニックネーム / 指定メールアドレスで検索').fill('zzzz-no-match');
 
   await expect(page.getByText('表示するデータがありません')).toBeVisible();
   await expect(page.locator('tbody tr[role="checkbox"]')).toHaveCount(0);
 });
+
 test('Winners (extra) - the Access Log button opens the access log page', async ({ page }) => {
   await page.goto('/winners');
 

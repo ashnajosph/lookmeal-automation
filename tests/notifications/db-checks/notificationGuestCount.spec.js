@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { openGuestInAppForm } = require('./notificationGuestHelpers');
-const { downloadTable, activeGuests } = require('./dbReportHelpers');
+const { openGuestInAppForm } = require('../helpers/notificationGuestHelpers');
+const { downloadTable, activeGuests } = require('../helpers/dbReportHelpers');
 
 // Nothing is sent: the dialog is opened only to read the guest count, then cancelled.
 test('ADM_030.021 - the guest count in the send dialog equals the guests with a device token in the guest_user log', async ({ page }) => {

@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, openNotifications } = require('./notificationHelpers');
+const { rowsOf, openNotifications } = require('../helpers/notificationHelpers');
 
 // The list has no guest-only view, so these tests use the 配信方法 filter and the 詳細を見る button.
 // Nothing here sends anything.

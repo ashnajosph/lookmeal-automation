@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, searchBox, openNotifications, openCreateForm } = require('./notificationHelpers');
-const { registeredRadio, guestRadio, openGuestInAppForm, openGuestPushForm } = require('./notificationGuestHelpers');
+const { rowsOf, searchBox, openNotifications, openCreateForm } = require('../helpers/notificationHelpers');
+const { registeredRadio, guestRadio, openGuestInAppForm, openGuestPushForm } = require('../helpers/notificationGuestHelpers');
 
 // None of these tests presses 次へ or 送信する: nothing can reach the guest users.
 

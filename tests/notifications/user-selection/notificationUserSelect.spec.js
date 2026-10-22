@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { openCreateForm } = require('./notificationHelpers');
+const { openCreateForm } = require('../helpers/notificationHelpers');
 
 // 配信先ユーザー選択 screen (in-app notification to registered users).
 // General Admin has no access to the user module, so the app answers the user list request with 403
@@ -67,7 +67,7 @@ async function openConfirmDialog(page, count) {
   return dialog;
 }
 
-test('ADM_027.070 (General Admin) @critical - the user selection screen logs General Admin out because they have no user-module access', async ({ page }, testInfo) => {
+test('ADM_027.070 (General Admin) - the user selection screen logs General Admin out because they have no user-module access', async ({ page }, testInfo) => {
   test.skip(!isGeneralAdmin(testInfo), 'this restriction only applies to General Admin');
 
   await openCreateForm(page);

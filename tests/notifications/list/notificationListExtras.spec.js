@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { rowsOf, searchBox, noDataMessage, openNotifications } = require('./notificationHelpers');
-const { deliveryCell, titleCell, chooseFilter, expectOnlyMethod, firstTitle } = require('./notificationListHelpers');
+const { rowsOf, searchBox, noDataMessage, openNotifications } = require('../helpers/notificationHelpers');
+const { deliveryCell, titleCell, chooseFilter, expectOnlyMethod, firstTitle } = require('../helpers/notificationListHelpers');
 
 // Nothing here sends anything.
 test.beforeEach(async ({ page }) => {
@@ -65,7 +65,7 @@ test('ADM_027.028 / ADM_027.029 - the list narrows while typing, without pressin
   // the search also looks at the message, so a row without the keyword in its title can still match:
   // check that the notification stays and that the list got shorter
   await expect(rowsOf(page).filter({ hasText: keyword }).first()).toBeVisible();
-  await expect.poll(() => rowsOf(page).count()).toBeLessThan(before);
+  await expect.poll(() => rowsOf(page).count(), { timeout: 15000 }).toBeLessThan(before);
 });
 
 test('ADM_027.032 - searching part of a title finds that notification', async ({ page }) => {

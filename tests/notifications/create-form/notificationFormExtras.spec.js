@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { openCreateForm, openPushForm } = require('./notificationHelpers');
+const { openCreateForm, openPushForm } = require('../helpers/notificationHelpers');
 
 // Registered-user (会員ユーザー comes selected) in-app form. Nothing here presses 次へ or 送信する.
 async function openRegisteredInAppForm(page) {
