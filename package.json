@@ -13,7 +13,8 @@
     "test:winners": "playwright test tests/winners --project=chromium-super-admin",
     "test:users": "playwright test tests/users --project=chromium-super-admin",
     "test:tags": "playwright test tests/tags --project=chromium-super-admin",
-    "test:all": "playwright test"
+    "test:all": "playwright test",
+    "report:monthly": "bash tools/monthly-run.sh"
   },
   "keywords": [],
   "author": "",

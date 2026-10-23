@@ -17,3 +17,7 @@ run-results*.json
 traceability-list.json
 traceability-report.xlsx
 __pycache__/
+
+reports/
+
+.DS_Store
